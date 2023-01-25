@@ -26,12 +26,11 @@ function App() {
   };
 
   useEffect(() => {
-    //random number between 500 and 3000
     const randomTime = Math.floor(Math.random() * 2500) + 500;
     const interval = setInterval(() => {
       let dt = new Date();
       const newWords = [{ word: wordTypes[Math.floor(Math.random() * wordTypes.length)], dt: dt, id: words.length }, ...words];
-      // playNotification();
+      playNotification();
       setDate(dt);
 
       setWords(newWords);
