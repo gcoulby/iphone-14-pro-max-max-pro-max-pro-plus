@@ -1,38 +1,374 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  box-sizing: border-box;
+  /* font-family: "Poppins", sans-serif; */
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  font-family: "Source Sans Pro", sans-serif !important;
+}
+
+.red,
+.green {
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+  transform: rotate(135deg);
+}
+
+.iphone {
+  position: relative;
+  width: 350px;
+  /* height: 600px; */
+  background: rgb(52, 50, 50);
+  border-radius: 50px;
+  top: 200px;
+}
+
+.iphone::before {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  background: #000;
+  border-radius: 48px;
+}
+
+.inner {
+  display: flex;
+  justify-content: center;
+  opacity: 1;
+  position: absolute;
+  inset: 3px;
+  background: linear-gradient(20deg, purple, blue);
+  background-size: cover !important;
+  background-position: center !important;
+  border-radius: 48px;
+  border: 10px solid #000;
+  transition: 0.5s;
+}
+
+/* .iphone:hover .inner {
+  opacity: 1;
+} */
+
+.btn {
+  position: absolute;
+  top: 110px;
+  left: -2px;
+  width: 3px;
+  height: 26px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  z-index: 10;
+  background: radial-gradient(#ccc, #555, #222);
+}
+
+.btn2 {
+  top: 160px;
+  height: 40px;
+}
+
+.btn3 {
+  top: 220px;
+  height: 40px;
+}
+
+.rightButton {
+  position: absolute;
+  top: 170px;
+  right: -2px;
+  width: 3px;
+  height: 30px;
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+  background: radial-gradient(#ccc, #555, #222);
+  z-index: 10;
+}
+
+.dynamic_island {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  width: 100px;
+  height: 25px;
+  background: #000;
+  border-radius: 20px;
+  transition: 0.5s ease-in-out;
+}
+
+.dynamic_island:hover {
+  width: 200px;
+  height: 25px;
+}
+
+/* .dynamic_island.active {
+  width: 250px;
+  height: 60px;
+  border-radius: 50px;
+} */
+
+.content {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  line-height: 25px;
+  width: 100%;
+  color: #fff;
+}
+
+.content p {
+  color: #fff;
+  font-size: 0.6em;
+  cursor: pointer;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.action {
+  position: relative;
+  color: #fff;
+  top: 5px;
+  display: flex;
+  transition: 0.5s;
+  visibility: hidden;
+  gap: 12px;
+  opacity: 0;
+}
+
+.dynamic_island.active p,
+.dynamic_island:hover p,
+.dynamic_island:hover .action,
+.dynamic_island.active .action {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0.25s;
+}
+
+.dynamic_island.active p {
+  font-size: 1.2em;
+}
+
+.dynamic_island.active .red {
+  background: red;
+  color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 8px red;
+  margin-right: 12px;
+}
+
+.dynamic_island.active .green {
+  background: green;
+  color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 8px green;
+  margin-right: 8px;
+}
+
+.details {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.details .imgBox {
+  position: relative;
+  width: 0;
+  height: 0;
+  background: #fff;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.dynamic_island.active .details .imgBox {
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
+}
+
+.dynamic_island.active .action {
+  top: 12px;
+}
+
+.dynamic_island .imgBox img {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-headline {
+  display: inline-block;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(180deg, #ffb6ff, #b344ff);
+  will-change: transform;
+  padding-top: 0.5px;
+  overflow: hidden;
+  background-color: #ffb6ff 0%;
+  margin-top: 16px;
+}
+
+.title-text {
+  font-size: 35px;
+  line-height: 1.381002381;
+  font-weight: 400;
+  letter-spacing: 0.011em;
+  color: white;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.title-subtext {
+  font-size: 20px;
+  line-height: 1.381002381;
+  font-weight: 400;
+  letter-spacing: 0.011em;
   color: white;
+  text-align: center;
+  position: absolute;
+  left: 20px;
+  bottom: 200px;
 }
 
-.App-link {
-  color: #61dafb;
+.side-bar {
+  position: fixed;
+  height: 100vh;
+  width: 200px;
+  left: 0px;
+  top: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.title-block {
+  margin-top: -80px;
+}
+
+.clock {
+  font-weight: 200;
+  color: white;
+  position: relative;
+  top: 60px;
+  text-align: center;
+}
+
+.clock h4 {
+  font-weight: 400;
+  font-size: 15px;
+  margin-bottom: -10px;
+}
+
+.clock h1 {
+  font-size: 60px;
+}
+
+.notifications {
+  position: absolute;
+  bottom: 120px;
+  width: 80%;
+}
+
+.notification {
+  color: white;
+  display: flex;
+  list-style: none;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+.notification-icon {
+  width: 20%;
+}
+
+.notification-details {
+  width: 80%;
+}
+
+.notification-title {
+  font-weight: 600;
+  font-size: 8px;
+  margin-bottom: 5px;
+}
+
+.notifications-title {
+  color: white;
+  font-weight: 400;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.notification-time {
+  font-weight: 400;
+  font-size: 8px;
+  margin-bottom: 5px;
+  width: 50px;
+  text-align: right;
+}
+
+.big-actually {
+  text-align: center;
+  width: 100%;
+}
+
+.icons {
+  position: absolute;
+  bottom: 30px;
+  width: 80%;
+
+  /* display: flex;
+  gap: 10px; */
+}
+
+.camera-icon {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+.glow {
+  position: absolute;
+  width: 700px;
+  margin-left: -170px;
+  height: 100px;
+  border-radius: 50%;
+  bottom: -40px !important;
+  opacity: 0.3;
+  background: -moz-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 50%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 50%); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 50%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.apple-logo {
+  position: absolute;
+  margin-top: -150px !important;
+  left: 50%;
+  margin-left: -25px;
 }
