@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/iphone-14-pro-max-max-pro-max-pro-plus/static/css/main.cdaf4de7.css",
-    "main.js": "/iphone-14-pro-max-max-pro-max-pro-plus/static/js/main.fe38f8c0.js",
+    "main.css": "/iphone-14-pro-max-max-pro-max-pro-plus/static/css/main.173649fe.css",
+    "main.js": "/iphone-14-pro-max-max-pro-max-pro-plus/static/js/main.6917e209.js",
     "static/js/787.81466391.chunk.js": "/iphone-14-pro-max-max-pro-max-pro-plus/static/js/787.81466391.chunk.js",
     "static/media/notification.wav": "/iphone-14-pro-max-max-pro-max-pro-plus/static/media/notification.4183e2a6a42c3d57de6c.wav",
     "static/media/camera-icon.png": "/iphone-14-pro-max-max-pro-max-pro-plus/static/media/camera-icon.9614077c18b44d97c489.png",
     "static/media/torch-icon.png": "/iphone-14-pro-max-max-pro-max-pro-plus/static/media/torch-icon.f49f1cc9e0b4f09a5f0b.png",
     "static/media/logo.png": "/iphone-14-pro-max-max-pro-max-pro-plus/static/media/logo.e45d3ada5c90bb1e9207.png",
     "index.html": "/iphone-14-pro-max-max-pro-max-pro-plus/index.html",
-    "main.cdaf4de7.css.map": "/iphone-14-pro-max-max-pro-max-pro-plus/static/css/main.cdaf4de7.css.map",
-    "main.fe38f8c0.js.map": "/iphone-14-pro-max-max-pro-max-pro-plus/static/js/main.fe38f8c0.js.map",
+    "main.173649fe.css.map": "/iphone-14-pro-max-max-pro-max-pro-plus/static/css/main.173649fe.css.map",
+    "main.6917e209.js.map": "/iphone-14-pro-max-max-pro-max-pro-plus/static/js/main.6917e209.js.map",
     "787.81466391.chunk.js.map": "/iphone-14-pro-max-max-pro-max-pro-plus/static/js/787.81466391.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cdaf4de7.css",
-    "static/js/main.fe38f8c0.js"
+    "static/css/main.173649fe.css",
+    "static/js/main.6917e209.js"
   ]
 }
