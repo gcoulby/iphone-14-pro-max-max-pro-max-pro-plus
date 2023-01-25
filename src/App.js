@@ -6,6 +6,8 @@ import "./App.css";
 import { useEffect, useState } from "react";
 
 function App() {
+  const [count, setCount] = useState(0);
+  const [max, setMax] = useState(0);
   const wordTypes = ["Pro", "Max", "Plus"];
   const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -26,12 +28,14 @@ function App() {
   };
 
   useEffect(() => {
+    if (count > max) return;
     const randomTime = Math.floor(Math.random() * 2500) + 500;
     const interval = setInterval(() => {
       let dt = new Date();
       const newWords = [{ word: wordTypes[Math.floor(Math.random() * wordTypes.length)], dt: dt, id: words.length }, ...words];
       playNotification();
       setDate(dt);
+      setCount(count + 1);
 
       setWords(newWords);
     }, randomTime);
@@ -39,8 +43,7 @@ function App() {
   }, [words]);
 
   useEffect(() => {
-    const interval = setInterval(() => {}, 1000);
-    return () => clearInterval(interval);
+    setMax(Math.floor(Math.random() * 30) + 20);
   }, []);
 
   return (
@@ -49,7 +52,7 @@ function App() {
         <body>
           <div className="side-bar">
             <h3 className="title-subtext">
-              {((heightPx + (words.length - 5 > 0 ? (words.length - 5) * 60 : 0)) * (6.33 / heightPx)).toFixed(2)} inches tall!
+              {((heightPx + (words.length - 5 > 0 ? (words.length - 5) * 60 : 0)) * (6.33 / heightPx)).toFixed(2)} inches long!
             </h3>
           </div>
           <div class="iphone" style={{ height: `${heightPx + (words.length - 5 > 0 ? (words.length - 5) * 60 : 0)}px` }}>
